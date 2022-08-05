@@ -1,3 +1,9 @@
+// NOTE - I know some of this code isn't completely correct.
+// I worked heavily with my small group today (they are a good bunch) but
+// there we still a few pieces I couldn't figure out,
+// like how to add a default pet that could then be reassigned.
+
+
 // Write a class called Unicorn
 // it should have a dynamic name property
 // it should have a color property, that is silver by default
@@ -14,8 +20,8 @@ class Unicorn {
   }
 }
 
-var jesseTheUnicorn = new Unicorn("Jesse");
-jesseTheUnicorn.say("Hey folks")
+var pabloTheUnicorn = new Unicorn("Pablo");
+pabloTheUnicorn.say("Que pasaaaaa!")
 
 
 // Write a class called Vampire
@@ -25,7 +31,6 @@ jesseTheUnicorn.say("Hey folks")
 // it should have a drink method. When called, the thirsty property changes to false
 
 
-//NOTE - I know this isn't completely correct. I couldn't figure out how to add a default pet that could then be reassigned.
 class Vampire {
   constructor(name, pet) {
     this.name = name;
@@ -79,3 +84,29 @@ console.log(myDragon);
 //  it should have an isAdult property (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 //  it should have an isOld property that defaults to false. once a Hobbit is 101, it is old.
 //  it should have a hasRing property. If the Hobbit's name is "Frodo", true, if not, false.
+
+class Hobbit {
+  constructor(name, disposition, age) {
+    this.name = name;
+    this.disposition = disposition;
+    this.age = age;
+    this.isAdult = false;
+    this.isOld = false;
+    this.hasRing = false;
+    if (this.name === "Frodo") {
+      this.hasRing = true;
+    }
+    }
+    celebrateBirthday() {
+      this.age++;
+     if (this.age >= 33) {
+     this.isAdult = true
+  } if (this.age >= 101) {
+       this.isOld = true
+  }
+       return
+    }
+}
+var Hobbit1 = new Hobbit("Bilbo", "drunk", 165);
+Hobbit1.celebrateBirthday()
+console.log(Hobbit1)
